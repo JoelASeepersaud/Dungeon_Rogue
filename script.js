@@ -45,20 +45,22 @@ stats.dom.style.bottom = '0px';
 stats.dom.style.left = 'auto';
 stats.dom.style.top = 'auto';
 
+// HTML Elements
 const menu = document.getElementById('menu-screen');
 const hud = document.getElementById('hud');
 const GameOver = document.getElementById('GameOver');
 const playButton = document.getElementById('play-button');
 const replayButton = document.getElementById('replay-button');
 
+// Global Variables
 let character;
 let spawnAmt;
 let enemyRemain;
 let enemies = [];
 let spawnInterval;
 let gameStart = false;
-let difficulty = 1;
-let roomNum = 1;
+let difficulty;
+let roomNum;
 let walls = [];
 window.gamePause = false;
 
@@ -122,6 +124,7 @@ function reset(){
 // Function to setup and start game
 function startGame(){
   gameStart = true;
+
   // directional light
   const directionalLight = new THREE.DirectionalLight(0xffffff, .5);
   directionalLight.position.set(5, 5, 5);
@@ -131,8 +134,9 @@ function startGame(){
   const ambientLight = new THREE.AmbientLight(0x777777, 0.5); // Soft light
   scene.add(ambientLight);
 
-  // procedurally generate room
+  // Generate room
   walls = Room(scene, 30, 15);
+
   // generate player
   character = new Player(scene);
 
@@ -142,6 +146,10 @@ function startGame(){
   spawnAmt = 20;
   enemyRemain = spawnAmt;
   spawnInterval = setInterval(spawnEnemies, 1000)
+
+  window.gamePause = false;
+  difficulty = 1;
+  roomNum = 1;
 }
 
 // Spawn enemies away from player

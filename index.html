@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Capstone Project</title>
+  <link rel="stylesheet" href="./style.css">
+  <!--  Three.js CDN  -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/",
+        "stats.js": "https://cdnjs.cloudflare.com/ajax/libs/stats.js/17/Stats.js"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Menu Screen -->
+  <div id="menu-screen">
+    <h1>Dungeon Rogue</h1>
+    <div> Objective: Reach as many floors as possible by defeating all enemies </div>
+    <div> Leveling up and clearing rooms allows you to select a perk </div>
+    <br>
+    <div> Controls </div>
+    <div> WASD Keys: Move </div>
+    <div> Space Bar: Attack </div>
+    <div> Left Mouse: Select perks once they appear </div>
+    <button id="play-button">Play Game</button>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div id="controls">
+      <div>WASD - Move Character</div>
+      <div>Space Bar - Attack</div>
+      <div>Left Mouse: Select</div>
+      <br>
+    </div>
+
+    <div id="top-stats">
+      <div>Room: <span id="Room">1</span></div>
+      <div>Enemies: <span id="Enemies">0</span></div>
+      <div>Score: <span id="Score">0</span></div>
+    </div>
+    <div id="right-stats"></div>
+      <div id="stats">Health: <span id="health">100</span></div>
+      <div id="stats">Level: <span id="level">1</span></div>
+      <div id="stats">Exp: <span id="Exp">0</span>/<span id="ExpReq">10</span></div>
+    </div>
+  </div>
+
+  <div id="perk-selection" class="perk-hud">
+  </div>
+
+  <!-- Game Over Screen -->
+  <div id ="GameOver">
+    <h1>Game Over</h1>
+    <div id="stats">Player Score: <span id="PlayerScore">0</span></div>
+    <button id="replay-button">Start New Game</button>
+  </div>
+
+  <!--  Our Three.js Script  -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

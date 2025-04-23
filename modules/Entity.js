@@ -6,7 +6,7 @@ export class Entity {
 
         // Entity stats and states
         this.health = 100;
-        this.moveSpeed = 0.05;
+        this.moveSpeed = 0.03;
         this.attackSpeed = 1000;
         this.atkCooldown = Date.now();
         this.attackRange = 1;

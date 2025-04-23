@@ -12,7 +12,7 @@ export class Player extends Entity {
         this.ExpReq = 10;
         this.perks = [];
         this.attackSpeed = 500; // 1 second = 1000
-        this.attackRange = 2;
+        this.attackRange = 3;
         this.leveledUp = false;
 
         perkList = [new AoeDamageArea(this.scene, this), new LightningStike(this.scene), new statBoost()]

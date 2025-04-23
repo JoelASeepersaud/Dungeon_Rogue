@@ -211,7 +211,7 @@ var render = function () {
         difficulty++;
         roomNum++;
         enemies = [];
-        spawnAmt = 10;
+        spawnAmt = 20;
         enemyRemain = spawnAmt;
         spawnInterval = setInterval(spawnEnemies, 1000)
         character.score += 1000;

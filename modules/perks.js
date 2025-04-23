@@ -178,7 +178,7 @@ export class statBoost extends perk {
         this.statNameMap = {
             health: {name: "Health", amt: 10},
             attackPower: {name: "Attack Damage", amt: 5},
-            speed: {name: "Movement Speed", amt: .1}
+            speed: {name: "Movement Speed", amt: .003}
           };
   
           this.amount = this.statNameMap['health']['amt'];

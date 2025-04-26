@@ -44,7 +44,7 @@ export class Entity {
     // Update health when taking damage
     takeDamage(damage) {
         this.health -= damage;
-        if (this.health < 0 && this.isAlive) {
+        if (this.health <= 0 && this.isAlive) {
             this.health = 0;
             this.isAlive = false;
             this.getSpriteSheet(this.movement, 'death');

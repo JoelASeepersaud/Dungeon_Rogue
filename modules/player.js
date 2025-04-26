@@ -23,7 +23,7 @@ export class Player extends Entity {
         if (this.Exp >= this.ExpReq) {
             this.level++;
             this.health += 10;
-            this.damage += 6;
+            this.damage += 2;
             this.ExpReq += 10 * this.level;
             this.leveledUp = true;
         }

@@ -71,6 +71,10 @@ export class Player extends Entity {
         const distance = enemy.sprite.position.distanceTo(this.sprite.position);
         if (distance <= this.attackRange && this.isAttacking && this.attackCooldown()) {
             enemy.takeDamage(this.damage, this);
+            enemy.sprite.material.color.set(0xff0000);
+            setTimeout(() => {
+                enemy.sprite.material.color.set(0xffffff);
+              }, 200);
             this.atkCooldown = Date.now();
         }
     }
